@@ -10,6 +10,29 @@
 
 另外，还有些常用`GL`操作的封装，如`texture`和`bitmap`的互相转换等。
 
+使用方法：
+
+首先在项目根gradle中配置`jitpack`：
+
+```
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://www.jitpack.io' }
+    }
+}
+```
+
+然后在需要使用`FunRenderer`的模块gradle中配置依赖：
+
+```
+dependencies {
+    implementation 'com.github.kenneycode:GLKit:1.0.0'
+}
+```
+
+
+
 `demo`中有详细的例子，欢迎查阅：
 
 ![](demo.png)
