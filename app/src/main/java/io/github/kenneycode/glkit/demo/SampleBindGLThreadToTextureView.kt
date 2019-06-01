@@ -9,6 +9,14 @@ import android.view.TextureView
 import io.github.kenneycode.glkit.GLThread
 import kotlinx.android.synthetic.main.activity_sample_bind_egl_to_textureview.*
 
+/**
+ *
+ *      Coded by kenney
+ *
+ *      http://www.github.com/kenneycode
+ *
+ **/
+
 class SampleBindGLThreadToTextureView : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -11,6 +11,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ *
+ *      Coded by kenney
+ *
+ *      http://www.github.com/kenneycode
+ *
+ **/
+
 class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

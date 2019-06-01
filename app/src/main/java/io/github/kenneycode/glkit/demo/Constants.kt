@@ -1,5 +1,13 @@
 package io.github.kenneycode.glkit.demo
 
+/**
+ *
+ *      Coded by kenney
+ *
+ *      http://www.github.com/kenneycode
+ *
+ **/
+
 class Constants {
 
     companion object {

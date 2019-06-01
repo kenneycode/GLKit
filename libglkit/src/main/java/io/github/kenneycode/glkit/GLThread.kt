@@ -8,8 +8,12 @@ import android.view.Surface
 import java.util.concurrent.Semaphore
 
 /**
- * Created by kenneyqin on 2019/4/8
- */
+ *
+ *      Coded by kenney
+ *
+ *      http://www.github.com/kenneycode
+ *
+ **/
 
 class GLThread {
 

@@ -7,6 +7,14 @@ import android.view.SurfaceHolder
 import io.github.kenneycode.glkit.EGL
 import kotlinx.android.synthetic.main.activity_sample_bind_egl_to_surfaceview.*
 
+/**
+ *
+ *      Coded by kenney
+ *
+ *      http://www.github.com/kenneycode
+ *
+ **/
+
 class SampleBindEGLToSurfaceView : Activity() {
 
 

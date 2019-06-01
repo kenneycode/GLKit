@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">EGLKit</string>
-    <string name="sample_egl_basic_usage">EGL基本用法(EGL basic usage)</string>
-    <string name="sample_bind_egl_to_surfaceview">EGL与SurfaceView绑定(bind EGL to SurfaceView)</string>
-    <string name="sample_bind_egl_to_textureview">EGL与TextureView绑定(bind EGL to TextureView)</string>
-    <string name="sample_egl_share_context">EGL共享Context(EGL share context)</string>
-    <string name="sample_glthread_basic_usage">GLThread基本用法(GLThread basic usage)</string>
-    <string name="sample_bind_glthread_to_surfaceview">GLThread与SurfaceView绑定(bind GLThread to SurfaceView)</string>
-    <string name="sample_bind_glthread_to_textureview">GLThread与TextureView绑定(bind GLThread to TextureView)</string>
-    <string name="sample_glthread_share_context">GLThread共享Context(GLThread share context)</string>
+    <string name="sample_egl_basic_usage">EGL基本用法\n(EGL basic usage)</string>
+    <string name="sample_bind_egl_to_surfaceview">EGL与SurfaceView绑定\n(bind EGL to SurfaceView)</string>
+    <string name="sample_bind_egl_to_textureview">EGL与TextureView绑定\n(bind EGL to TextureView)</string>
+    <string name="sample_egl_share_context">EGL共享Context\n(EGL share context)</string>
+    <string name="sample_glthread_basic_usage">GLThread基本用法\n(GLThread basic usage)</string>
+    <string name="sample_bind_glthread_to_surfaceview">GLThread与SurfaceView绑定\n(bind GLThread to SurfaceView)</string>
+    <string name="sample_bind_glthread_to_textureview">GLThread与TextureView绑定\n(bind GLThread to TextureView)</string>
+    <string name="sample_glthread_share_context">GLThread共享Context\n(GLThread share context)</string>
 </resources>

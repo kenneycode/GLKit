@@ -6,6 +6,14 @@ import android.os.Bundle
 import io.github.kenneycode.glkit.EGL
 import io.github.kenneycode.glkit.GLUtils
 
+/**
+ *
+ *      Coded by kenney
+ *
+ *      http://www.github.com/kenneycode
+ *
+ **/
+
 class SampleEGLShareContext : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
