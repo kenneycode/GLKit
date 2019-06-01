@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GLKit.iml" filepath="$PROJECT_DIR$/GLKit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libglkit/libglkit.iml" filepath="$PROJECT_DIR$/libglkit/libglkit.iml" />
+    </modules>
+  </component>
+</project>
