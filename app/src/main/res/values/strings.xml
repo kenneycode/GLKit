@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EGLKit</string>
+    <string name="app_name">GLKit</string>
     <string name="sample_egl_basic_usage">EGL基本用法\n(EGL basic usage)</string>
     <string name="sample_bind_egl_to_surfaceview">EGL与SurfaceView绑定\n(bind EGL to SurfaceView)</string>
     <string name="sample_bind_egl_to_textureview">EGL与TextureView绑定\n(bind EGL to TextureView)</string>
