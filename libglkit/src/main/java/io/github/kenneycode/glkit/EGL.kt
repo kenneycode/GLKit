@@ -25,6 +25,13 @@ class EGL {
     private var previousReadSurface = EGL14.EGL_NO_SURFACE
     private var previousContext = EGL14.EGL_NO_CONTEXT
 
+    /**
+     * 初始化EGL (init EGL)
+     *
+     * @param surface 要绑定的surface (the surface to bind)
+     * @param shareContext 要共享的EGL Context (the EGL context to share)
+     *
+     */
     fun init(surface: Surface? = null, shareContext: EGLContext? = EGL14.EGL_NO_CONTEXT) {
         eglDisplay = EGL14.eglGetDisplay(EGL14.EGL_DEFAULT_DISPLAY)
         val version = IntArray(2)
@@ -52,6 +59,10 @@ class EGL {
         }
     }
 
+    /**
+     * 绑定EGL到调用线程 (bind EGL to calling thread)
+     *
+     */
     fun bind() {
         previousDisplay = EGL14.eglGetCurrentDisplay()
         previousDrawSurface = EGL14.eglGetCurrentSurface(EGL14.EGL_DRAW)
@@ -60,14 +71,33 @@ class EGL {
         EGL14.eglMakeCurrent(eglDisplay, eglSurface, eglSurface, eglContext)
     }
 
+    /**
+     * 交换buffer，如果绑定了一个surface并希望渲染到这个surface上，
+     * 则在渲染操作后需调用本方法
+     *
+     * swap buffers.
+     * if the EGL binds to a surface and you want to render to this surface,
+     * please call this method after rendering.
+     *
+     */
     fun swapBuffers(): Boolean {
         return EGL14.eglSwapBuffers(eglDisplay, eglSurface)
     }
 
+    /**
+     * 将EGL与调用线程解绑并恢复之前的EGL
+     * unbind EGL to the calling thread and restore the previous EGL
+     *
+     */
     fun unbind() {
         EGL14.eglMakeCurrent(previousDisplay, previousDrawSurface, previousReadSurface, previousContext)
     }
 
+    /**
+     * 释放资源
+     * release resources
+     *
+     */
     fun release() {
         if (eglDisplay !== EGL14.EGL_NO_DISPLAY) {
             EGL14.eglMakeCurrent(eglDisplay, EGL14.EGL_NO_SURFACE, EGL14.EGL_NO_SURFACE, EGL14.EGL_NO_CONTEXT)
@@ -82,6 +112,11 @@ class EGL {
 
     }
 
+    /**
+     * 检查EGL是否有错误
+     * check EGL error
+     *
+     */
     private fun checkEglError(msg: String) {
         val error= EGL14.eglGetError()
         if (error != EGL14.EGL_SUCCESS) {

@@ -21,6 +21,16 @@ class GLUtils {
         
         private val TAG = "GLUtils"
 
+        /**
+         * 将一个OES纹理转换成bitmap (convert a OES texture to bitmap)
+         *
+         * @param texture 要转换的OES纹理 (the OES texture to convert)
+         * @param width 纹理宽 (the width of the texture)
+         * @param height 纹理高 (the height of the texture)
+         *
+         * @return 转换后的bitmap (the converted bitmap)
+         *
+         */
         fun oesTexture2Bitmap(texture: Int, width: Int, height: Int): Bitmap {
             val buffer = ByteBuffer.allocate(width * height * 4)
             val frameBuffers = IntArray(1)
@@ -38,6 +48,16 @@ class GLUtils {
             return bitmap
         }
 
+        /**
+         * 将一个纹理转换成bitmap (convert a texture to bitmap)
+         *
+         * @param texture 要转换的纹理 (the texture to convert)
+         * @param width 纹理宽 (the width of the texture)
+         * @param height 纹理高 (the height of the texture)
+         *
+         * @return 转换后的bitmap (the converted bitmap)
+         *
+         */
         fun texture2Bitmap(texture: Int, width: Int, height: Int): Bitmap {
             val buffer = ByteBuffer.allocate(width * height * 4)
             val frameBuffers = IntArray(1)
@@ -55,6 +75,12 @@ class GLUtils {
             return bitmap
         }
 
+        /**
+         * 创建一个纹理 (create a texture)
+         *
+         * @return 创建好的纹理 (the created texture)
+         *
+         */
         fun createTexture(): Int {
             val textures = IntArray(1)
             GLES30.glGenTextures(textures.size, textures, 0)
@@ -67,6 +93,12 @@ class GLUtils {
             return textures[0]
         }
 
+        /**
+         * 创建一个OES纹理 (create a OES texture)
+         *
+         * @return 创建好的纹理 (the created texture)
+         *
+         */
         fun createOESTexture(): Int {
             val textures = IntArray(1)
             GLES30.glGenTextures(textures.size, textures, 0)
@@ -79,22 +111,47 @@ class GLUtils {
             return textures[0]
         }
 
+        /**
+         * 删除一个纹理 (delete a texture)
+         *
+         * @param texture 要删除的纹理 (the texture to delete)
+         *
+         */
         fun deleteTexture(texture: Int) {
             val textures = intArrayOf(texture)
             GLES30.glDeleteTextures(1, textures, 0)
         }
 
+        /**
+         * 删除一个frame buffer (delete a frame buffer)
+         *
+         * @param frameBuffer 要删除的frame buffer (the frame buffer to delete)
+         *
+         */
         fun deleteFrameBuffer(frameBuffer: Int) {
             val frameBuffers = intArrayOf(frameBuffer)
             GLES30.glDeleteTextures(1, frameBuffers, 0)
         }
 
+        /**
+         * 将bitmap转换成纹理 (convert bitmap to texture)
+         *
+         * @return 转换好的纹理 (the converted texture)
+         *
+         */
         fun bitmap2Texture(bitmap: Bitmap): Int {
             val texture = createTexture()
             loadBitmap2Texture(bitmap, texture)
             return texture
         }
 
+        /**
+         * 将bitmap加载到指定的纹理中 (load a bitmap into the specified texture)
+         *
+         * @param bitmap 要加载的bitmap (the bitmap)
+         * @param texture 要加载到的纹理 (the texture to store the bitmap data)
+         *
+         */
         fun loadBitmap2Texture(bitmap: Bitmap, texture: Int) {
             val buffer = ByteBuffer.allocateDirect(bitmap.width * bitmap.height * 4)
             bitmap.copyPixelsToBuffer(buffer)
@@ -103,6 +160,10 @@ class GLUtils {
             GLES20.glTexImage2D(GLES20.GL_TEXTURE_2D, 0, GLES20.GL_RGBA, bitmap.width, bitmap.height, 0, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, buffer)
         }
 
+        /**
+         * 检查GL错误 (check GL Error)
+         *
+         */
         fun checkGLError() {
             val error = GLES30.glGetError()
             if (error != GLES30.GL_NO_ERROR) {
