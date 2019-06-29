@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import io.github.kenneycode.glkit.GLUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -24,7 +25,7 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val texture = GLUtils.createTexture()
         val sampleItems = arrayOf(
             SampleItem(getString(R.string.sample_egl_basic_usage), SampleEGLBasicUsage::class.java),
             SampleItem(getString(R.string.sample_bind_egl_to_surfaceview), SampleBindEGLToSurfaceView::class.java),
@@ -33,7 +34,8 @@ class MainActivity : Activity() {
             SampleItem(getString(R.string.sample_glthread_basic_usage), SampleGLThreadBasicUsage::class.java),
             SampleItem(getString(R.string.sample_bind_glthread_to_surfaceview), SampleBindEGLToSurfaceView::class.java),
             SampleItem(getString(R.string.sample_bind_glthread_to_textureview), SampleBindEGLToTextureView::class.java),
-            SampleItem(getString(R.string.sample_glthread_share_context), SampleGLThreadShareContext::class.java)
+            SampleItem(getString(R.string.sample_glthread_share_context), SampleGLThreadShareContext::class.java),
+            SampleItem(getString(R.string.sample_gltextureview), SampleGLTextureView::class.java)
         )
 
         val layoutManager = LinearLayoutManager(this)

@@ -8,4 +8,5 @@
     <string name="sample_bind_glthread_to_surfaceview">GLThread与SurfaceView绑定\n(bind GLThread to SurfaceView)</string>
     <string name="sample_bind_glthread_to_textureview">GLThread与TextureView绑定\n(bind GLThread to TextureView)</string>
     <string name="sample_glthread_share_context">GLThread共享Context\n(GLThread share context)</string>
+    <string name="sample_gltextureview">GLTextureView\n(GLTextureView)</string>
 </resources>

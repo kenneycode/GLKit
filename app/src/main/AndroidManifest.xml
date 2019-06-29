@@ -24,6 +24,7 @@
         <activity android:name=".SampleBindGLThreadToSurfaceView"/>
         <activity android:name=".SampleBindGLThreadToTextureView"/>
         <activity android:name=".SampleGLThreadShareContext"/>
+        <activity android:name=".SampleGLTextureView"/>
     </application>
 
 </manifest>

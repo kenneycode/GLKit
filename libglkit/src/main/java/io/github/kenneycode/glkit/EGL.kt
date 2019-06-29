@@ -3,10 +3,11 @@ package io.github.kenneycode.glkit
 import android.opengl.EGL14
 import android.opengl.EGLContext
 import android.opengl.EGLExt
-import android.util.Log
 import android.view.Surface
 
 /**
+ *
+ *      EGL相关操作封装类
  *
  *      Coded by kenney
  *
@@ -26,6 +27,7 @@ class EGL {
     private var previousContext = EGL14.EGL_NO_CONTEXT
 
     /**
+     *
      * 初始化EGL (init EGL)
      *
      * @param surface 要绑定的surface (the surface to bind)
@@ -60,6 +62,7 @@ class EGL {
     }
 
     /**
+     *
      * 绑定EGL到调用线程 (bind EGL to calling thread)
      *
      */
@@ -72,6 +75,7 @@ class EGL {
     }
 
     /**
+     *
      * 交换buffer，如果绑定了一个surface并希望渲染到这个surface上，
      * 则在渲染操作后需调用本方法
      *
@@ -85,6 +89,7 @@ class EGL {
     }
 
     /**
+     *
      * 将EGL与调用线程解绑并恢复之前的EGL
      * unbind EGL to the calling thread and restore the previous EGL
      *
@@ -94,6 +99,7 @@ class EGL {
     }
 
     /**
+     *
      * 释放资源
      * release resources
      *

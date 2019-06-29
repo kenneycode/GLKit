@@ -9,6 +9,8 @@ import java.util.concurrent.Semaphore
 
 /**
  *
+ *      带有EGL环境的线程封装
+ *
  *      Coded by kenney
  *
  *      http://www.github.com/kenneycode
@@ -22,6 +24,7 @@ class GLThread {
     lateinit var egl : EGL
 
     /**
+     *
      * 初始化GLThread (init GLThread)
      *
      * @param surface 要绑定的surface (the surface to bind)
@@ -39,6 +42,7 @@ class GLThread {
     }
 
     /**
+     *
      * 在GLThread异步执行一个任务 (asynchronously run a task in GLThread)
      *
      * @param r 要执行的任务 (the task to run)
@@ -55,6 +59,7 @@ class GLThread {
     }
 
     /**
+     *
      * 在GLThread同步执行一个任务 (synchronously run a task in GLThread)
      *
      * @param r 要执行的任务 (the task to run)
@@ -74,6 +79,7 @@ class GLThread {
     }
 
     /**
+     *
      * 获取与GLThread绑定的EGL Context (obtain the EGL Context bound to the GLThread)
      *
      * @return 与GLThread绑定的EGL (the EGL Context bound to the GLThread)
@@ -85,6 +91,7 @@ class GLThread {
     }
 
     /**
+     *
      * 停止线程和释放资源
      * stop the thread and release resources
      *

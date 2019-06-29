@@ -9,9 +9,12 @@ import java.nio.ByteBuffer
 
 /**
  *
+ *      GL常用操作Util类
+ *
  *      Coded by kenney
  *
  *      http://www.github.com/kenneycode
+ *
  *
  **/
 
@@ -22,6 +25,7 @@ class GLUtils {
         private val TAG = "GLUtils"
 
         /**
+         *
          * 将一个OES纹理转换成bitmap (convert a OES texture to bitmap)
          *
          * @param texture 要转换的OES纹理 (the OES texture to convert)
@@ -49,6 +53,7 @@ class GLUtils {
         }
 
         /**
+         *
          * 将一个纹理转换成bitmap (convert a texture to bitmap)
          *
          * @param texture 要转换的纹理 (the texture to convert)
@@ -76,6 +81,7 @@ class GLUtils {
         }
 
         /**
+         *
          * 创建一个纹理 (create a texture)
          *
          * @return 创建好的纹理 (the created texture)
@@ -94,6 +100,7 @@ class GLUtils {
         }
 
         /**
+         *
          * 创建一个OES纹理 (create a OES texture)
          *
          * @return 创建好的纹理 (the created texture)
@@ -112,6 +119,7 @@ class GLUtils {
         }
 
         /**
+         *
          * 删除一个纹理 (delete a texture)
          *
          * @param texture 要删除的纹理 (the texture to delete)
@@ -123,6 +131,7 @@ class GLUtils {
         }
 
         /**
+         *
          * 删除一个frame buffer (delete a frame buffer)
          *
          * @param frameBuffer 要删除的frame buffer (the frame buffer to delete)
@@ -134,6 +143,7 @@ class GLUtils {
         }
 
         /**
+         *
          * 将bitmap转换成纹理 (convert bitmap to texture)
          *
          * @return 转换好的纹理 (the converted texture)
@@ -146,6 +156,7 @@ class GLUtils {
         }
 
         /**
+         *
          * 将bitmap加载到指定的纹理中 (load a bitmap into the specified texture)
          *
          * @param bitmap 要加载的bitmap (the bitmap)
@@ -161,6 +172,7 @@ class GLUtils {
         }
 
         /**
+         *
          * 检查GL错误 (check GL Error)
          *
          */
