@@ -48,6 +48,7 @@ class GLUtils {
             bitmap.copyPixelsFromBuffer(buffer)
             GLES30.glFramebufferTexture2D(GLES30.GL_FRAMEBUFFER, GLES30.GL_COLOR_ATTACHMENT0, GLES11Ext.GL_TEXTURE_EXTERNAL_OES, 0, 0)
             GLES30.glBindFramebuffer(GLES30.GL_FRAMEBUFFER, 0)
+            GLES30.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, 0)
             GLES30.glDeleteFramebuffers(frameBuffers.size, frameBuffers, 0)
             return bitmap
         }
@@ -76,6 +77,7 @@ class GLUtils {
             bitmap.copyPixelsFromBuffer(buffer)
             GLES30.glFramebufferTexture2D(GLES30.GL_FRAMEBUFFER, GLES30.GL_COLOR_ATTACHMENT0, GLES30.GL_TEXTURE_2D, 0, 0)
             GLES30.glBindFramebuffer(GLES30.GL_FRAMEBUFFER, 0)
+            GLES30.glBindTexture(GLES30.GL_TEXTURE_2D, 0)
             GLES30.glDeleteFramebuffers(frameBuffers.size, frameBuffers, 0)
             return bitmap
         }
@@ -114,7 +116,7 @@ class GLUtils {
             GLES30.glTexParameteri(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, GLES30.GL_TEXTURE_WRAP_T, GLES30.GL_CLAMP_TO_EDGE)
             GLES30.glTexParameteri(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, GLES30.GL_TEXTURE_MIN_FILTER, GLES30.GL_LINEAR)
             GLES30.glTexParameteri(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, GLES30.GL_TEXTURE_MAG_FILTER, GLES30.GL_LINEAR)
-            GLES30.glBindTexture(GLES30.GL_TEXTURE_2D, 0)
+            GLES30.glBindTexture(GLES30.GL_TEXTURE_EXTERNAL_OES, 0)
             return textures[0]
         }
 
