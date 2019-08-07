@@ -31,11 +31,11 @@ class SampleGLThreadShareContext : Activity() {
         glThread0.init()
         glThread1.init(shareContext = glThread0.getEGLContext())
 
-        glThread0.execute(Runnable {
+        glThread0.execute({
             texture = GLUtils.bitmap2Texture(bitmap)
         })
 
-        glThread1.execute(Runnable {
+        glThread1.execute({
             val bitmap = GLUtils.texture2Bitmap(texture, bitmap.width, bitmap.height)
         })
 

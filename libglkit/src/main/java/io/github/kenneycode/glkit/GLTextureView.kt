@@ -41,6 +41,7 @@ open class GLTextureView : TextureView {
             }
 
             override fun onSurfaceTextureDestroyed(surfaceTexture: SurfaceTexture?): Boolean {
+                surface?.release()
                 return false
             }
 
@@ -50,7 +51,7 @@ open class GLTextureView : TextureView {
                 surface = Surface(surfaceTexture)
                 glThread = GLThread()
                 glThread?.init(surface)
-                glThread?.post(Runnable {
+                glThread?.post({
                     callback?.onInit()
                     requestRender()
                 })
@@ -65,7 +66,7 @@ open class GLTextureView : TextureView {
      *
      */
     fun requestRender() {
-        glThread?.post(Runnable {
+        glThread?.post({
             callback?.onRender(surfaceTextureWidth, surfaceTextureHeight)
         }, true)
     }
@@ -75,8 +76,8 @@ open class GLTextureView : TextureView {
      * 在GL线程同步执行一个任务 (Execute a task synchronously on GL thread)
      *
      */
-    fun executeOnGLThread(r : Runnable) {
-        glThread?.execute(r)
+    fun executeOnGLThread(task: () -> Unit) {
+        glThread?.execute(task)
     }
 
     /**
@@ -84,8 +85,8 @@ open class GLTextureView : TextureView {
      * 在GL线程异步执行一个任务 (Execute a task asynchronously on GL thread)
      *
      */
-    fun postToGLThread(r : Runnable) {
-        glThread?.post(r)
+    fun postToGLThread(task: () -> Unit) {
+        glThread?.post(task)
     }
 
     /**
@@ -99,7 +100,7 @@ open class GLTextureView : TextureView {
 
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
-        glThread?.execute(Runnable {
+        glThread?.execute({
             callback?.onRelease()
         })
         glThread?.release()

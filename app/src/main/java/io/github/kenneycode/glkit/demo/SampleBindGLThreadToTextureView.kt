@@ -46,7 +46,7 @@ class SampleBindGLThreadToTextureView : Activity() {
                 surface = Surface(surfaceTexture)
                 glThread.init(surface)
 
-                glThread.post(Runnable {
+                glThread.post({
                     GLES30.glClearColor(0f, 0f, 1f, 1f)
                     GLES30.glClear(GLES30.GL_COLOR_BUFFER_BIT)
                 }, true)

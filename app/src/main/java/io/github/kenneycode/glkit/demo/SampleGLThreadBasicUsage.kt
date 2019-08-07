@@ -24,7 +24,7 @@ class SampleGLThreadBasicUsage : Activity() {
         val glThread = GLThread()
         glThread.init()
 
-        glThread.post(Runnable {
+        glThread.post({
             val texture = GLUtils.createTexture()
             assert(GLES30.glIsTexture(texture))
             GLUtils.deleteTexture(texture)

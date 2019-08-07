@@ -45,13 +45,13 @@ class GLThread {
      *
      * 在GLThread异步执行一个任务 (asynchronously run a task in GLThread)
      *
-     * @param r 要执行的任务 (the task to run)
+     * @param task 要执行的任务 (the task to run)
      * @param render 这个任务是否需要进行渲染 (indicates if the task needs to render)
      *
      */
-    fun post(r : Runnable, render: Boolean = false) {
+    fun post(task: () -> Unit, render: Boolean = false) {
         handler.post {
-            r.run()
+            task.invoke()
             if (render) {
                 egl.swapBuffers()
             }
@@ -62,14 +62,14 @@ class GLThread {
      *
      * 在GLThread同步执行一个任务 (synchronously run a task in GLThread)
      *
-     * @param r 要执行的任务 (the task to run)
+     * @param task 要执行的任务 (the task to run)
      * @param render 这个任务是否需要进行渲染 (indicates if the task needs to render)
      *
      */
-    fun execute(r : Runnable, render: Boolean = false) {
+    fun execute(task: () -> Unit, render: Boolean = false) {
         val semaphore = Semaphore(0)
         handler.post {
-            r.run()
+            task.invoke()
             if (render) {
                 egl.swapBuffers()
             }
