@@ -90,6 +90,18 @@ class EGL {
 
     /**
      *
+     * 设置presentation time
+     * set presentation time
+     *
+     * @param timestamp 时间戳，单位是纳秒(timestamp in nanoseconds)
+     *
+     */
+    fun setPresentationTime(timestamp: Long): Boolean {
+        return EGLExt.eglPresentationTimeANDROID(eglDisplay, eglSurface, timestamp)
+    }
+
+    /**
+     *
      * 将EGL与调用线程解绑并恢复之前的EGL
      * unbind EGL to the calling thread and restore the previous EGL
      *
